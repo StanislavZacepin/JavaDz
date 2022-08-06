@@ -6,16 +6,19 @@ duplicateZeros(arrr);
 void duplicateZeros(int[] arr)
 {
     int[] arr2 = new int[arr.Length];
-
+    List<int> arr3 = new List<int>();
     for (int i = 0; i < arr.Length; i++)
     {
         if(arr[i] == 0)
         {
-            arr2[i] = 0;
-            if (i != arr2.Length - 1) arr2[i + 1] = 0;
-            i++;
+            arr3.Add(0);
+            arr3.Add(0);
         }
-        else arr2[i] = arr[i];
+        else arr3.Add(arr[i]);
+    }
+     for (int i = 0; i < arr.Length; i++)
+    {
+        arr2[i] = arr3[i];
     }
     foreach (var item in arr2)
 	{
