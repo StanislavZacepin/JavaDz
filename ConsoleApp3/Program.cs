@@ -17,5 +17,8 @@ void duplicateZeros(int[] arr)
         }
         else arr2[i] = arr[i];
     }
-
+    foreach (var item in arr2)
+	{
+        Console.WriteLine(item);
+	} 
 }
