@@ -7,6 +7,15 @@ void duplicateZeros(int[] arr)
 {
     int[] arr2 = new int[arr.Length];
 
-    
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if(arr[i] == 0)
+        {
+            arr2[i] = 0;
+            arr2[i + 1] = 0;
+            i++;
+        }
+        else arr2[i] = arr[i];
+    }
 
 }
