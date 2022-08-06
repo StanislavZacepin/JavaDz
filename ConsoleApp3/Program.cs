@@ -12,7 +12,7 @@ void duplicateZeros(int[] arr)
         if(arr[i] == 0)
         {
             arr2[i] = 0;
-            arr2[i + 1] = 0;
+            if (i != arr2.Length - 1) arr2[i + 1] = 0;
             i++;
         }
         else arr2[i] = arr[i];
