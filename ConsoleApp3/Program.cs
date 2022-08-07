@@ -32,4 +32,12 @@ public int removeElement(int[] nums, int val)
 {
     int k = 0;
     List<int> arr3 = new List<int>();
+    for (int i = 0; i < nums.Length; i++)
+    {
+        if (nums[i] != val)
+        {
+            arr3.Add(nums[i]);
+            k++;
+        }
+    }
 }
