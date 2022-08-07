@@ -27,7 +27,9 @@ void duplicateZeros(int[] arr)
 }*/
 
 int[] nums = [3, 2, 2, 3], val = 3;
+int val = 2;
 
+int k = removeElement(nums, val);
 public int removeElement(int[] nums, int val)
 {
     int k = 0;
@@ -40,4 +42,16 @@ public int removeElement(int[] nums, int val)
             k++;
         }
     }
+    for (int i = 0; i < nums.Length; i++)
+    {
+        if (i < k)
+            nums[i] = arr3[i];
+        else nums[i] = 0;
+    }
+    foreach (var item in nums)
+    {
+        Console.WriteLine(item);
+    }
+    Console.WriteLine("         ___" + k);
+    return k;
 }
