@@ -26,7 +26,7 @@ void duplicateZeros(int[] arr)
 	} 
 }*/
 
-int[] nums = [3, 2, 2, 3], val = 3;
+/*int[] nums = [3, 2, 2, 3], val = 3;
 int val = 2;
 
 int k = removeElement(nums, val);
@@ -54,4 +54,4 @@ public int removeElement(int[] nums, int val)
     }
     Console.WriteLine("         ___" + k);
     return k;
-}
+}*/
