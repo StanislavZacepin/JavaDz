@@ -75,6 +75,8 @@ public string reverseWords(string s)
     s = Regex.Replace(s, @"^\s+", String.Empty);
     s = Regex.Replace(s, @"\s+$", String.Empty);
 
+    string[] arr3 = s.Split(' ');
+    s = String.Empty;
 
     return s;
 }
