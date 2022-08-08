@@ -78,5 +78,17 @@ public string reverseWords(string s)
     string[] arr3 = s.Split(' ');
     s = String.Empty;
 
+    for (int i = arr3.Length - 1; i >= 0; i--)
+    {
+        if (i >= 0)
+        {
+            s += arr3[i];
+            if (i != 0)
+                s += ' ';
+        }
+
+    }
+    Console.WriteLine(s);
+
     return s;
 }
