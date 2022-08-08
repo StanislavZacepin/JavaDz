@@ -71,7 +71,9 @@ s = reverseWords(s);
 
 public string reverseWords(string s)
 {
-    
+    s = Regex.Replace(s, @"\s+", " ");
+    s = Regex.Replace(s, @"^\s+", String.Empty);
+    s = Regex.Replace(s, @"\s+$", String.Empty);
 
 
     return s;
