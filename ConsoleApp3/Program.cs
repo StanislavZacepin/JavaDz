@@ -55,3 +55,24 @@ public int removeElement(int[] nums, int val)
     Console.WriteLine("         ___" + k);
     return k;
 }*/
+
+using System.Text.RegularExpressions;
+
+string s = "the sky is blue";
+string ss = "  hello world  ";
+string sss = "a good   example";
+string s4 = "  Bob    Loves  Alice   ";
+
+s = reverseWords(s);
+ss = reverseWords(ss);
+sss = reverseWords(sss);
+s4 = reverseWords(s4);
+s = reverseWords(s);
+
+public string reverseWords(string s)
+{
+    
+
+
+    return s;
+}
