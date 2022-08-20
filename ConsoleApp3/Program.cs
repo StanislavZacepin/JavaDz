@@ -26,7 +26,7 @@ void duplicateZeros(int[] arr)
 	} 
 }*/
 
-int[] nums = [3, 2, 2, 3], val = 3;
+/*int[] nums = [3, 2, 2, 3], val = 3;
 int val = 2;
 
 int k = removeElement(nums, val);
@@ -54,4 +54,41 @@ public int removeElement(int[] nums, int val)
     }
     Console.WriteLine("         ___" + k);
     return k;
+}*/
+
+using System.Text.RegularExpressions;
+
+string s = "the sky is blue";
+string ss = "  hello world  ";
+string sss = "a good   example";
+string s4 = "  Bob    Loves  Alice   ";
+
+s = reverseWords(s);
+ss = reverseWords(ss);
+sss = reverseWords(sss);
+s4 = reverseWords(s4);
+s = reverseWords(s);
+
+public string reverseWords(string s)
+{
+    s = Regex.Replace(s, @"\s+", " ");
+    s = Regex.Replace(s, @"^\s+", String.Empty);
+    s = Regex.Replace(s, @"\s+$", String.Empty);
+
+    string[] arr3 = s.Split(' ');
+    s = String.Empty;
+
+    for (int i = arr3.Length - 1; i >= 0; i--)
+    {
+        if (i >= 0)
+        {
+            s += arr3[i];
+            if (i != 0)
+                s += ' ';
+        }
+
+    }
+    Console.WriteLine(s);
+
+    return s;
 }
