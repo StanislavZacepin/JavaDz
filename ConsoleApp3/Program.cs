@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int[] arrr = new int[] { 1, 0, 2, 3, 0, 4, 5, 0 };
+/*int[] arrr = new int[] { 1, 0, 2, 3, 0, 4, 5, 0 };
 
 duplicateZeros(arrr);
 void duplicateZeros(int[] arr)
@@ -24,4 +24,34 @@ void duplicateZeros(int[] arr)
 	{
         Console.WriteLine(item);
 	} 
+}*/
+
+int[] nums = [3, 2, 2, 3], val = 3;
+int val = 2;
+
+int k = removeElement(nums, val);
+public int removeElement(int[] nums, int val)
+{
+    int k = 0;
+    List<int> arr3 = new List<int>();
+    for (int i = 0; i < nums.Length; i++)
+    {
+        if (nums[i] != val)
+        {
+            arr3.Add(nums[i]);
+            k++;
+        }
+    }
+    for (int i = 0; i < nums.Length; i++)
+    {
+        if (i < k)
+            nums[i] = arr3[i];
+        else nums[i] = 0;
+    }
+    foreach (var item in nums)
+    {
+        Console.WriteLine(item);
+    }
+    Console.WriteLine("         ___" + k);
+    return k;
 }
