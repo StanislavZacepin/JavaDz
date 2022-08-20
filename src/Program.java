@@ -1,7 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Program {
     public static void main(String[] args) {
@@ -20,44 +17,38 @@ public class Program {
 
     public static String simplifyPath(String path) {
 
-        Deque<String> Dq = new ArrayDeque<>();
-        Set<String> point = Set.of("..");
+        List<String> Array = new ArrayList<>();
+        Set<String> point = Set.of(".","");
         String[] tokens = path.split("/");
 
-        path = String.valueOf(Processing(tokens, Dq, point));
+        path = String.valueOf(Processing(tokens, Array, point));
 
         return path;
     }
 
-    public static StringBuilder Processing(String[] tokens, Deque<String> Dq, Set<String> point) {
-        StringBuilder path = new StringBuilder();
-        for (String token : tokens) {
-            if (point.contains(token)) {
-                Dq.pollLast();
-                Dq.pollLast();
-                Dq.pollLast();
-                Dq.pollLast();
-                Dq.pollLast();
-                Dq.pollLast();
-            } else if (!Objects.equals(token, "")) {
-                Dq.add("/");
-                Dq.add(token);
+    public static StringBuilder Processing(String[] tokens, List<String> Array, Set<String> point) {
+        StringBuilder path = new StringBuilder("/");
+
+
+        for (String s : tokens) {
+            if(s.equals("..")){
+                if (Array.size() > 0 ) {
+                    Array.remove(Array.size() - 1);
+                }
+
+            }
+            else if (!point.contains(s)) {
+                Array.add(s);
             }
 
         }
-        int Size = Dq.size();
-
-        while (Size > 1 && Dq.getLast().equals("/") || Size > 1 && Dq.getLast().equals(".")) {
-            Dq.pollLast();
+        for(String p : Array) {
+            path.append(p).append("/");
+        }
+        if(path.length() > 1) {
+            return new StringBuilder(path.substring(0, path.length() - 1));
         }
 
-        for (String s : Dq) {
-            if (!s.equals("") && !Objects.equals(s, ".")) {
-                path.append(Dq.poll());
-            }
-
-        }
-        if (path.toString().equals("")) return path.append("/");
         return new StringBuilder(path.toString());
     }
 }
