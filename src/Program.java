@@ -18,7 +18,7 @@ public class Program {
     public static String simplifyPath(String path) {
 
         List<String> Array = new ArrayList<>();
-        Set<String> point = Set.of(".","");
+        Set<String> point = Set.of(".", "");
         String[] tokens = path.split("/");
 
         path = String.valueOf(Processing(tokens, Array, point));
@@ -31,21 +31,20 @@ public class Program {
 
 
         for (String s : tokens) {
-            if(s.equals("..")){
-                if (Array.size() > 0 ) {
+            if (s.equals("..")) {
+                if (Array.size() > 0) {
                     Array.remove(Array.size() - 1);
                 }
 
-            }
-            else if (!point.contains(s)) {
+            } else if (!point.contains(s)) {
                 Array.add(s);
             }
 
         }
-        for(String p : Array) {
+        for (String p : Array) {
             path.append(p).append("/");
         }
-        if(path.length() > 1) {
+        if (path.length() > 1) {
             return new StringBuilder(path.substring(0, path.length() - 1));
         }
 
